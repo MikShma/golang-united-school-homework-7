@@ -30,6 +30,10 @@ func Test_SetMatrix(t *testing.T) {
 		t.Errorf("could not set a new value")
 	}
 
+	if matrix.Set(3, 3, 11) {
+		t.Errorf("Out of matrix range")
+	}
+
 	if !reflect.DeepEqual(expectedMatrix, matrix.data) {
 		t.Errorf("expected to get %v, but actual is %v", expectedMatrix, matrix.data)
 	}
